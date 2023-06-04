@@ -17,7 +17,7 @@ const useRecommendedProducts = (itemsCount) => {
 
       if (docs.empty) {
         if (didMount) {
-          setError('No recommended products found.');
+          setError('No Review found.');
           setLoading(false);
         }
       } else {
