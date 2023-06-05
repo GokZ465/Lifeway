@@ -1,6 +1,10 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { MessageDisplay } from "@/components/common";
 import { ProductShowcaseGrid } from "@/components/product";
+import PaymentForm from "@/components/payment/paymentForm";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import StripeConfig from "../../../src/services/stripeConfig";
 import {
   FEATURED_PRODUCTS,
   RECOMMENDED_PRODUCTS,
@@ -16,6 +20,8 @@ import {
 import bannerImg from "@/images/banner-girl.png";
 import React from "react";
 import { Link } from "react-router-dom";
+
+const stripePromise = loadStripe(StripeConfig.publicKey);
 
 const Home = () => {
   useDocumentTitle("Lifeway | Home");
@@ -76,6 +82,11 @@ const Home = () => {
               skeletonCount={6}
             />
           )}
+        </div>
+        <div>
+          <Elements stripe={stripePromise}>
+            <PaymentForm />
+          </Elements>
         </div>
         <div className="display">
           <div className="display-header">

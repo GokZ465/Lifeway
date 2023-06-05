@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "@/redux/actions/authActions";
 import { setAuthenticating, setAuthStatus } from "@/redux/actions/miscActions";
 import * as Yup from "yup";
+import { CustomMobileInput } from "@/components/formik";
 
 const SignInSchema = Yup.object().shape({
   email: Yup.string()
@@ -25,6 +26,8 @@ const SignInSchema = Yup.object().shape({
   fullname: Yup.string()
     .required("Full name is required.")
     .min(4, "Name should be at least 4 characters."),
+  address: Yup.string(),
+  mobile: Yup.string(),
 });
 
 const SignUp = ({ history }) => {
@@ -48,11 +51,19 @@ const SignUp = ({ history }) => {
   const onClickSignIn = () => history.push(SIGNIN);
 
   const onFormSubmit = (form) => {
+    console.log(
+      form.email.trim().toLowerCase(),
+      form.fullname.trim(),
+      form.password.trim(),
+      form.address.trim()
+    );
     dispatch(
       signUp({
         fullname: form.fullname.trim(),
         email: form.email.trim().toLowerCase(),
         password: form.password.trim(),
+        address: form.address.trim().toLowerCase(),
+        mobile: {},
       })
     );
   };
@@ -84,6 +95,8 @@ const SignUp = ({ history }) => {
                   fullname: "",
                   email: "",
                   password: "",
+                  address: "",
+                  mobile: "",
                 }}
                 validateOnChange
                 validationSchema={SignInSchema}
@@ -122,6 +135,23 @@ const SignUp = ({ history }) => {
                         component={CustomInput}
                       />
                     </div>
+                    <div className="auth-field">
+                      <Field
+                        disabled={isAuthenticating}
+                        name="address"
+                        type="text"
+                        label="* Address"
+                        placeholder="Your Address"
+                        component={CustomInput}
+                      />
+                    </div>
+                    <CustomMobileInput
+                      name="phoneNumber"
+                      disabled={isAuthenticating}
+                      label="Mobile Number "
+                      defaultValue={{ IN: "7550055871" }}
+                      component={CustomInput}
+                    />
                     <br />
                     <div className="auth-field auth-action auth-action-signup">
                       <button

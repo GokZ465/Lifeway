@@ -1,0 +1,19 @@
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.payment-form input {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.payment-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
