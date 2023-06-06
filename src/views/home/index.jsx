@@ -20,6 +20,7 @@ import {
 import bannerImg from "@/images/banner-girl.png";
 import React from "react";
 import { Link } from "react-router-dom";
+import ChartHome from "../charts/ChartHome";
 
 const stripePromise = loadStripe(StripeConfig.publicKey);
 
@@ -43,6 +44,7 @@ const Home = () => {
   return (
     <main className="content">
       <div className="home">
+        <ChartHome />
         {/* <div className="banner">
           <div className="banner-desc">
             <h1 className="text-thin">
@@ -83,11 +85,12 @@ const Home = () => {
             />
           )}
         </div>
-        <div>
+
+        {/* <div>
           <Elements stripe={stripePromise}>
             <PaymentForm />
           </Elements>
-        </div>
+        </div> */}
         <div className="display">
           <div className="display-header">
             <h1>Reviews</h1>

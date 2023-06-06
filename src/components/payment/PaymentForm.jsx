@@ -53,7 +53,8 @@ const PaymentForm = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          maxWidth: "400px",
+          width: "60vw",
+          height: "40vh",
           margin: "0 auto",
         }}
         onSubmit={handleSubmit}

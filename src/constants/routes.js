@@ -20,3 +20,4 @@ export const CHECKOUT_STEP_3 = "/checkout/step3";
 export const VIEW_PRODUCT = "/product/:id";
 export const ABOUT = "/about";
 export const TERMS = "/terms";
+export const CUSTOMERPAY = "/payment";

@@ -2,6 +2,8 @@ import * as Route from "@/constants/routes";
 import logo from "@/images/logo2.png";
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { IconButton } from "@mui/material";
+import { GitHub, Twitter, Instagram } from "@mui/icons-material";
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -33,6 +35,17 @@ const Footer = () => {
           &copy;&nbsp;
           {new Date().getFullYear()}
         </h5>
+        <div className="social-media-icons">
+          <IconButton>
+            <GitHub />
+          </IconButton>
+          <IconButton>
+            <Twitter />
+          </IconButton>
+          <IconButton>
+            <Instagram />
+          </IconButton>
+        </div>
       </div>
       <div className="footer-col-3">
         <strong>

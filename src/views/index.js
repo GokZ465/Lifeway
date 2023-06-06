@@ -18,4 +18,5 @@ export { default as Search } from "./search";
 export { default as Shop } from "./shop";
 export { default as About } from "./about";
 export { default as Terms } from "./terms";
+export { default as CustomerPay } from "./customerPay";
 export { default as ViewProduct } from "./view_product";

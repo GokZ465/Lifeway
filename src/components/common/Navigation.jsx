@@ -103,6 +103,14 @@ const Navigation = () => {
             Terms and Conditions
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            activeClassName="navigation-menu-active"
+            to={ROUTE.CUSTOMERPAY}
+          >
+            Payment
+          </NavLink>
+        </li>
         {/* <li>
           <NavLink
             activeClassName="navigation-menu-active"
