@@ -24,6 +24,7 @@ const AppRouter = () => (
         <Route component={view.About} exact path={ROUTES.ABOUT} />
         <Route component={view.Terms} exact path={ROUTES.TERMS} />
         <Route component={view.Shop} exact path={ROUTES.SHOP} />
+        <Route component={view.Help} exact path={ROUTES.HELP} />
         <Route component={view.CustomerPay} exact path={ROUTES.CUSTOMERPAY} />
         <Route
           component={view.FeaturedProducts}
