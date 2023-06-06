@@ -104,6 +104,11 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink activeClassName="navigation-menu-active" to={ROUTE.HELP}>
+            Help
+          </NavLink>
+        </li>
+        <li>
           <NavLink
             activeClassName="navigation-menu-active"
             to={ROUTE.CUSTOMERPAY}

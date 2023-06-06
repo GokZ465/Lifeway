@@ -3,7 +3,7 @@ import logo from "@/images/logo2.png";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { IconButton } from "@mui/material";
-import { GitHub, Twitter, Instagram } from "@mui/icons-material";
+import { Twitter, YouTube, LinkedIn, Facebook } from "@mui/icons-material";
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -36,14 +36,20 @@ const Footer = () => {
           {new Date().getFullYear()}
         </h5>
         <div className="social-media-icons">
-          <IconButton>
+          {/* <IconButton sx={{ fontSize: "3.5rem", color: "#24292e" }}>
             <GitHub />
+          </IconButton> */}
+          <IconButton sx={{ fontSize: "3.5rem", color: "#1DA1F2" }}>
+            <Twitter style={{ height: "5.5rem", width: "2.8rem" }} />
           </IconButton>
-          <IconButton>
-            <Twitter />
+          <IconButton sx={{ fontSize: "3.5rem", color: "#FF0000" }}>
+            <YouTube style={{ height: "5.5rem", width: "2.8rem" }} />
           </IconButton>
-          <IconButton>
-            <Instagram />
+          <IconButton sx={{ fontSize: "3.5rem", color: "#0A66C2" }}>
+            <LinkedIn style={{ height: "5.5rem", width: "2.8rem" }} />
+          </IconButton>
+          <IconButton sx={{ fontSize: "3.5rem", color: "#4267B2" }}>
+            <Facebook style={{ height: "5.5rem", width: "2.8rem" }} />
           </IconButton>
         </div>
       </div>

@@ -1,5 +1,5 @@
 export const HOME = "/";
-export const SHOP = "/shop";
+export const SHOP = "/list";
 export const FEATURED_PRODUCTS = "/featured";
 export const RECOMMENDED_PRODUCTS = "/recommended";
 export const ACCOUNT = "/account";
@@ -20,4 +20,5 @@ export const CHECKOUT_STEP_3 = "/checkout/step3";
 export const VIEW_PRODUCT = "/product/:id";
 export const ABOUT = "/about";
 export const TERMS = "/terms";
+export const HELP = "/help";
 export const CUSTOMERPAY = "/payment";
