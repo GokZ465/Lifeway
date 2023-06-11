@@ -1,15 +1,15 @@
 import { MessageDisplay } from "@/components/common";
-import { ProductShowcaseGrid } from "@/components/product";
-import { useDocumentTitle, useFeaturedProducts, useScrollTop } from "@/hooks";
+import { UserShowcaseGrid } from "@/components/product";
+import { useDocumentTitle, useUsersWithRole, useScrollTop } from "@/hooks";
 import bannerImg from "@/images/banner-guy.png";
 import React from "react";
 
 const FeaturedProducts = () => {
-  useDocumentTitle("Featured Products | Lifeway");
+  useDocumentTitle("Trending | Lifeway");
   useScrollTop();
 
-  const { featuredProducts, fetchFeaturedProducts, isLoading, error } =
-    useFeaturedProducts();
+  const { users, isLoading, error, fetchUsersWithRole } =
+    useUsersWithRole("USER");
 
   return (
     <main className="content">
@@ -27,14 +27,11 @@ const FeaturedProducts = () => {
             {error && !isLoading ? (
               <MessageDisplay
                 message={error}
-                action={fetchFeaturedProducts}
+                action={fetchUsersWithRole}
                 buttonLabel="Try Again"
               />
             ) : (
-              <ProductShowcaseGrid
-                products={featuredProducts}
-                skeletonCount={6}
-              />
+              <UserShowcaseGrid products={users} skeletonCount={6} />
             )}
           </div>
         </div>

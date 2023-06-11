@@ -103,6 +103,7 @@ class Firebase {
   // // PRODUCT ACTIONS --------------
 
   getSingleProduct = (id) => this.db.collection("products").doc(id).get();
+  getSingleUser = (id) => this.db.collection("users").doc(id).get();
 
   getProducts = (lastRefKey) => {
     let didTimeout = false;
@@ -234,6 +235,13 @@ class Firebase {
     this.db
       .collection("products")
       .where("isFeatured", "==", true)
+      .limit(itemsCount)
+      .get();
+
+  getUsersWithRole = (role, itemsCount = 12) =>
+    this.db
+      .collection("users")
+      .where("role", "==", role)
       .limit(itemsCount)
       .get();
 
