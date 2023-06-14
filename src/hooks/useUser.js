@@ -1,15 +1,10 @@
 import { useDidMount } from "@/hooks";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import firebase from "@/services/firebase";
 
 const useUser = (id) => {
-  // get and check if user exists in store
-  const storeUser = useSelector((state) =>
-    state.users.items.find((item) => item.id === id)
-  );
-
-  const [user, setUser] = useState(storeUser);
+  console.log("reaches here");
+  const [user, setUser] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const didMount = useDidMount(true);
@@ -17,20 +12,19 @@ const useUser = (id) => {
   useEffect(() => {
     (async () => {
       try {
-        if (!user || user.id !== id) {
-          setLoading(true);
-          const doc = await firebase.getSingleUser(id);
+        setLoading(true);
+        const doc = await firebase.getSingleUser(id);
+        console.log("doc", doc);
+        if (doc.exists) {
+          const data = { ...doc.data(), id: doc.ref.id };
 
-          if (doc.exists) {
-            const data = { ...doc.data(), id: doc.ref.id };
-
-            if (didMount) {
-              setUser(data);
-              setLoading(false);
-            }
-          } else {
-            setError("User not found.");
+          if (didMount) {
+            setUser(data);
+            setLoading(false);
+            console.log("user", user);
           }
+        } else {
+          setError("User not found.");
         }
       } catch (err) {
         if (didMount) {

@@ -8,3 +8,4 @@ export { default as useModal } from "./useModal";
 export { default as useProduct } from "./useProduct";
 export { default as useRecommendedProducts } from "./useRecommendedProducts";
 export { default as useScrollTop } from "./useScrollTop";
+export { default as useUser } from "./useUser";

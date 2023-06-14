@@ -32,7 +32,6 @@ const FormSchema = Yup.object().shape({
     dialCode: Yup.string(),
     value: Yup.string(),
   }),
-  proof: Yup.mixed().required("Proof document is required"),
 });
 
 const EditProfile = () => {
@@ -60,7 +59,6 @@ const EditProfile = () => {
     email: profile.email || "",
     address: profile.address || "",
     mobile: profile.mobile || {},
-    proof: null,
   };
 
   const { imageFile, isFileLoading, onFileChange } = useFileHandler({

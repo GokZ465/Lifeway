@@ -1,6 +1,6 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { MessageDisplay } from "@/components/common";
-import { ProductShowcaseGrid } from "@/components/product";
+import { ProductShowcaseGrid, UserShowcaseGrid } from "@/components/product";
 import PaymentForm from "@/components/payment/paymentForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -14,6 +14,7 @@ import {
 import {
   useDocumentTitle,
   useFeaturedProducts,
+  useUsersWithRole,
   useRecommendedProducts,
   useScrollTop,
 } from "@/hooks";
@@ -34,6 +35,12 @@ const Home = () => {
     isLoading: isLoadingFeatured,
     error: errorFeatured,
   } = useFeaturedProducts(6);
+  const {
+    users,
+    isLoading: isLoadingUser,
+    error: errorUser,
+  } = useUsersWithRole("USER", 3);
+
   const {
     recommendedProducts,
     fetchRecommendedProducts,
@@ -79,10 +86,7 @@ const Home = () => {
               buttonLabel="Try Again"
             />
           ) : (
-            <ProductShowcaseGrid
-              products={featuredProducts}
-              skeletonCount={6}
-            />
+            <UserShowcaseGrid products={users} skeletonCount={6} />
           )}
         </div>
 

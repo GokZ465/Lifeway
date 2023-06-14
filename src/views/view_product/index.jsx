@@ -6,7 +6,7 @@ import { displayMoney } from "@/helpers/utils";
 import {
   useBasket,
   useDocumentTitle,
-  useProduct,
+  useUser,
   useRecommendedProducts,
   useScrollTop,
 } from "@/hooks";
@@ -16,7 +16,7 @@ import Select from "react-select";
 
 const ViewProduct = () => {
   const { id } = useParams();
-  const { product, isLoading, error } = useProduct(id);
+  const { product, isLoading, error } = useUser(id);
   const { addToBasket, isItemOnBasket } = useBasket(id);
   useScrollTop();
   useDocumentTitle(`View ${product?.name || "Item"}`);
