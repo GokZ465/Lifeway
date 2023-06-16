@@ -103,3 +103,71 @@ h6 {
   animation: fadeIn .5s ease;
   position: relative;
 }
+html,
+body {
+  color: #000;
+  background: #fff;
+}
+
+
+[data-theme='dark'],
+[data-theme='dark'] body {
+  color: #fff !important;
+  background: #020a0e;
+ 
+
+}
+[data-theme='dark'] body h1{
+  color: #fff !important;
+  
+ 
+
+}
+[data-theme='dark'] body p:not(.chat-p) {
+  color: #fff !important;
+}
+
+[data-theme='dark'] body h2{
+  color: #939393 !important;
+  
+ 
+
+}
+[data-theme='dark'] body a{
+  color: #939393 !important;
+  
+ 
+
+}
+[data-theme='dark'] .navigation{
+  background: #081720;
+  color: #fff ;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+
+  .user-nav h5{
+    color: #fff;
+  }
+}
+
+[data-theme='dark'] .navigation-menu-main a {
+  color: #fff;
+  opacity: 1;
+}
+
+[data-theme='dark'].navigation-menu-link{
+  color: #f3f0f0 ; 
+}
+[data-theme='dark'] .navigation-menu-main a:hover {
+  background: #2c414e;
+  color: #fff;
+}
+
+[data-theme='dark'] .footer {
+  background: #081720;
+  
+
+}
+[data-theme='dark'] .footer h5{
+
+  color: #fff;
+}

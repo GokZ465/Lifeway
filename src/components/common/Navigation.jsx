@@ -11,11 +11,16 @@ import Badge from "./Badge";
 import FiltersToggle from "./FiltersToggle";
 import MobileNavigation from "./MobileNavigation";
 import SearchBar from "./SearchBar";
+import { useTheme } from "next-themes";
 
 const Navigation = () => {
   const navbar = useRef(null);
-  const { pathname } = useLocation();
+  const { theme, setTheme } = useTheme();
 
+  const { pathname } = useLocation();
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
   const store = useSelector((state) => ({
     basketLength: state.basket.length,
     user: state.auth,
@@ -65,6 +70,7 @@ const Navigation = () => {
       />
     );
   }
+
   return (
     <nav className="navigation" ref={navbar}>
       <div className="logo">
@@ -115,6 +121,11 @@ const Navigation = () => {
           >
             Payment
           </NavLink>
+        </li>
+        <li>
+          <button onClick={toggleTheme} style={{ marginLeft: "0.2rem" }}>
+            {theme === "dark" ? "light" : "dark"}
+          </button>
         </li>
         {/* <li>
           <NavLink

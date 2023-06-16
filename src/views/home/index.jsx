@@ -97,7 +97,7 @@ const Home = () => {
         </div> */}
         <div className="display">
           <div className="display-header">
-            <h1>Reviews</h1>
+            <h1>User Reviews</h1>
             <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
           </div>
           {errorRecommended && !isLoadingRecommended ? (

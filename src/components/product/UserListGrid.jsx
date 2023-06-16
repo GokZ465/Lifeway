@@ -72,7 +72,7 @@ const UserList = ({ product }) => {
         <div className="product-display-details">
           <h2>{product.fullname || <Skeleton width={80} />}</h2>
           <p className="text-subtle text-italic">
-            {product.email || <Skeleton width={40} />}
+            {/* {product.email || <Skeleton width={40} />} */}
           </p>
           <button
             style={{ marginLeft: "auto" }} // Add inline CSS to align the button to the right

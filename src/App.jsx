@@ -5,15 +5,18 @@ import React, { StrictMode } from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import AppRouter from "@/routers/AppRouter";
+import { ThemeProvider } from "next-themes";
 import "@stripe/react-stripe-js"; // Import the Stripe React library
 
 const App = ({ store, persistor }) => (
   <StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={<Preloader />} persistor={persistor}>
-        <AppRouter />
-      </PersistGate>
-    </Provider>
+    <ThemeProvider>
+      <Provider store={store}>
+        <PersistGate loading={<Preloader />} persistor={persistor}>
+          <AppRouter />
+        </PersistGate>
+      </Provider>
+    </ThemeProvider>
   </StrictMode>
 );
 App.propTypes = {

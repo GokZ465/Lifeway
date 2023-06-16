@@ -16,7 +16,7 @@ const FeaturedProducts = () => {
       <div className="featured">
         <div className="banner">
           <div className="banner-desc">
-            <h1>Featured Products</h1>
+            <h1>Featured Users</h1>
           </div>
           <div className="banner-img">
             <img src={bannerImg} alt="" />

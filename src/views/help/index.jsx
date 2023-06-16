@@ -149,7 +149,10 @@ export default function Help() {
                     <h4
                       style={{
                         marginBottom: "3px",
-                        color: message.role !== "USER" ? "blue" : "black",
+                        color:
+                          message.role !== "USER"
+                            ? "#a2a2f0"
+                            : "rgb(136, 136, 136)",
                       }}
                     >
                       {message.fullname}
@@ -157,7 +160,7 @@ export default function Help() {
                     <p
                       style={{
                         fontSize: message.role !== "USER" ? "16px" : "12px",
-                        color: message.role !== "USER" ? "blue" : "#888",
+                        color: message.role !== "USER" ? "#a2a2f0" : "#888",
                       }}
                     >
                       {message.role}
@@ -172,7 +175,7 @@ export default function Help() {
                     marginBottom: "10px",
                   }}
                 >
-                  <p>{message.content}</p>
+                  <p className="chat-p">{message.content}</p>
                   <p
                     style={{
                       fontSize: "12px",
