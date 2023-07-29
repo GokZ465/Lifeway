@@ -6,4 +6,4 @@ dist/
 .firebase/
 package-lock.json
 debug.log
-stripeConfig.js
+
