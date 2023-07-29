@@ -71,6 +71,7 @@
     "@syncfusion/ej2-react-schedule": "^19.4.50",
     "cors": "^2.8.5",
     "firebase": "^8.4.3",
+    "firebase-functions": "^4.4.1",
     "formik": "^2.2.6",
     "history": "^4.10.0",
     "moment": "^2.29.1",
