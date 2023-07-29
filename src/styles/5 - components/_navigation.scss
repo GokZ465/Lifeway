@@ -76,7 +76,15 @@
       opacity: .5;
       
       &:hover {
-        background: $background-color-01;
+        background: rgb(0, 145, 255);
+        border-radius: 15px;
+        color: #fff;
+      }
+
+      &:focus {
+        background: rgb(0, 145, 255);
+        border-radius: 15px;
+        color: #fff;
       }
     }
   }
@@ -103,14 +111,19 @@
   text-transform: uppercase;
   font-weight: bold;
   position: relative;
+  
 
   &:hover {
     text-decoration: none;
     background: $background-color-01;
+    
   }
 }
 
 .navigation-menu-active {
   font-weight: bold;
   opacity: 1 !important;
+  background: rgb(0, 145, 255);
+  border-radius: 15px;
+  color: #fff;
 }

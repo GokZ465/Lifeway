@@ -152,7 +152,7 @@ const Navigation = () => {
           </button>
         </FiltersToggle>
       )}
-      <SearchBar />
+      {/* <SearchBar /> */}
       <ul className="navigation-menu">
         <li className="navigation-menu-item">
           {/* <BasketToggle>
@@ -181,6 +181,7 @@ const Navigation = () => {
                 className="button button-small"
                 onClick={onClickLink}
                 to={ROUTE.SIGNUP}
+                style={{ backgroundColor: "rgb(0, 145, 255)" }}
               >
                 Sign Up
               </Link>
@@ -191,7 +192,7 @@ const Navigation = () => {
                 onClick={onClickLink}
                 to={ROUTE.SIGNIN}
               >
-                Sign In
+                Log In
               </Link>
             )}
           </li>

@@ -4,7 +4,9 @@ import { ProductShowcaseGrid, UserShowcaseGrid } from "@/components/product";
 import PaymentForm from "@/components/payment/paymentForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import family from "@/images/family.jpg";
 import StripeConfig from "../../../src/services/stripeConfig";
+
 import {
   FEATURED_PRODUCTS,
   RECOMMENDED_PRODUCTS,
@@ -49,72 +51,114 @@ const Home = () => {
   } = useRecommendedProducts(6);
 
   return (
-    <main className="content">
-      <div className="home">
-        <ChartHome />
-        {/* <div className="banner">
-          <div className="banner-desc">
-            <h1 className="text-thin">
-              <strong>See</strong>
-              &nbsp;everything with&nbsp;
-              <strong>Clarity</strong>
-            </h1>
-            <p>
-              Buying eyewear should leave you happy and good-looking, with money
-              in your pocket. Glasses, sunglasses, and contacts—we’ve got your
-              eyes covered.
-            </p>
-            <br />
-            <Link to={SHOP} className="button">
-              Shop Now &nbsp;
-              <ArrowRightOutlined />
-            </Link>
-          </div>
-          <div className="banner-img">
-            <img src={bannerImg} alt="" />
-          </div>
-        </div> */}
-        <div className="display">
-          <div className="display-header">
-            <h1>Trending Pages</h1>
-            <Link to={FEATURED_PRODUCTS}>See All</Link>
-          </div>
-          {errorFeatured && !isLoadingFeatured ? (
-            <MessageDisplay
-              message={errorFeatured}
-              action={fetchFeaturedProducts}
-              buttonLabel="Try Again"
-            />
-          ) : (
-            <UserShowcaseGrid products={users} skeletonCount={6} />
-          )}
-        </div>
+    <div>
+      <ChartHome />
 
-        {/* <div>
+      <main className="content">
+        <div className="home">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "20px",
+            }}
+          >
+            <div style={{ flex: 1, marginRight: "20px" }}>
+              <img src={family} alt="" style={{ maxWidth: "90rem" }} />
+            </div>
+            <div style={{ flex: 1, padding: "10px", marginLeft: "10rem" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "10px",
+                }}
+              >
+                <span
+                  style={{
+                    color: "green",
+                    marginRight: "10px",
+                    fontSize: "24px",
+                  }}
+                >
+                  ✓
+                </span>
+                <p style={{ fontSize: "2.5rem" }}>Payment guarantee</p>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "10px",
+                }}
+              >
+                <span
+                  style={{
+                    color: "green",
+                    marginRight: "10px",
+                    fontSize: "24px",
+                  }}
+                >
+                  ✓
+                </span>
+                <p style={{ fontSize: "2.5rem" }}>Easy way to earn</p>
+              </div>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <span
+                  style={{
+                    color: "green",
+                    marginRight: "10px",
+                    fontSize: "24px",
+                  }}
+                >
+                  ✓
+                </span>
+                <p style={{ fontSize: "2.5rem" }}>Customer support</p>
+              </div>
+            </div>
+          </div>
+          <div className="display">
+            <div className="display-header">
+              <h1>Trending Pages</h1>
+              <Link to={FEATURED_PRODUCTS}>See All</Link>
+            </div>
+            {errorFeatured && !isLoadingFeatured ? (
+              <MessageDisplay
+                message={errorFeatured}
+                action={fetchFeaturedProducts}
+                buttonLabel="Try Again"
+              />
+            ) : (
+              <UserShowcaseGrid products={users} skeletonCount={6} />
+            )}
+          </div>
+
+          {/* <div>
           <Elements stripe={stripePromise}>
             <PaymentForm />
           </Elements>
         </div> */}
-        <div className="display">
-          <div className="display-header">
-            <h1>User Reviews</h1>
-            <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
+          <div className="display">
+            <div className="display-header">
+              <h1>User Reviews</h1>
+              <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
+            </div>
+            {errorRecommended && !isLoadingRecommended ? (
+              <MessageDisplay
+                message={errorRecommended}
+                action={fetchRecommendedProducts}
+                buttonLabel="Try Again"
+              />
+            ) : (
+              <ProductShowcaseGrid
+                products={recommendedProducts}
+                skeletonCount={6}
+              />
+            )}
           </div>
-          {errorRecommended && !isLoadingRecommended ? (
-            <MessageDisplay
-              message={errorRecommended}
-              action={fetchRecommendedProducts}
-              buttonLabel="Try Again"
-            />
-          ) : (
-            <ProductShowcaseGrid
-              products={recommendedProducts}
-              skeletonCount={6}
-            />
-          )}
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 };
 

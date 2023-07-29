@@ -3,7 +3,16 @@ import logo from "@/images/logo2.png";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { IconButton } from "@mui/material";
-import { Twitter, YouTube, LinkedIn, Facebook } from "@mui/icons-material";
+import {
+  Twitter,
+  YouTube,
+  LinkedIn,
+  Facebook,
+  Pinterest,
+  Reddit,
+  Instagram,
+} from "@mui/icons-material"; // Add the new icons here
+import { FaBlogger } from "react-icons/fa"; // Import the Blogger icon from react-icons
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -36,9 +45,7 @@ const Footer = () => {
           {new Date().getFullYear()}
         </h5>
         <div className="social-media-icons">
-          {/* <IconButton sx={{ fontSize: "3.5rem", color: "#24292e" }}>
-            <GitHub />
-          </IconButton> */}
+          {/* Add new icons here */}
           <IconButton sx={{ fontSize: "3.5rem", color: "#1DA1F2" }}>
             <Twitter style={{ height: "5.5rem", width: "2.8rem" }} />
           </IconButton>
@@ -50,6 +57,22 @@ const Footer = () => {
           </IconButton>
           <IconButton sx={{ fontSize: "3.5rem", color: "#4267B2" }}>
             <Facebook style={{ height: "5.5rem", width: "2.8rem" }} />
+          </IconButton>
+          {/* Pinterest */}
+          <IconButton sx={{ fontSize: "3.5rem", color: "#E60023" }}>
+            <Pinterest style={{ height: "5.5rem", width: "2.8rem" }} />
+          </IconButton>
+          {/* Reddit */}
+          <IconButton sx={{ fontSize: "3.5rem", color: "#FF4500" }}>
+            <Reddit style={{ height: "5.5rem", width: "2.8rem" }} />
+          </IconButton>
+          {/* Blogger */}
+          <IconButton sx={{ fontSize: "3.5rem", color: "#FF5721" }}>
+            <FaBlogger style={{ height: "5.5rem", width: "2.8rem" }} />
+          </IconButton>
+          {/* Instagram */}
+          <IconButton sx={{ fontSize: "3.5rem", color: "#C13584" }}>
+            <Instagram style={{ height: "5.5rem", width: "2.8rem" }} />
           </IconButton>
         </div>
       </div>
