@@ -1,6 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
 import stripeConfig from "@/services/stripeConfig";
-import PaymentForm from "@/components/payment/paymentForm";
+//import PaymentForm from "@/components/payment/paymentForm";
 import { Elements } from "@stripe/react-stripe-js";
 
 const stripePromise = loadStripe(stripeConfig.publicKey);
