@@ -1,6 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
-import StripeConfig from '@/services/stripeConfig';
-import PaymentForm from "@/components/payment/paymentForm";
+import StripeConfig from "@/services/stripeConfig";
+//import PaymentForm from "@/components/payment/paymentForm";
 import { Elements } from "@stripe/react-stripe-js";
 
 const stripePromise = loadStripe(StripeConfig.publicKey);
@@ -18,9 +18,7 @@ export default function customerPay() {
           paddingTop: "10rem",
         }}
       >
-        <Elements stripe={stripePromise}>
-          <PaymentForm />
-        </Elements>
+        <Elements stripe={stripePromise}>{/* //  <PaymentForm /> */}</Elements>
       </div>
     </main>
   );
