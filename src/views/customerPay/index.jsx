@@ -1,9 +1,9 @@
 import { loadStripe } from "@stripe/stripe-js";
-import StripeConfig from "@/services/stripeConfig";
-//import PaymentForm from "@/components/payment/paymentForm";
+import stripeConfig from "@/services/stripeConfig";
+import PaymentForm from "@/components/payment/paymentForm";
 import { Elements } from "@stripe/react-stripe-js";
 
-const stripePromise = loadStripe(StripeConfig.publicKey);
+const stripePromise = loadStripe(stripeConfig.publicKey);
 
 import React from "react";
 
