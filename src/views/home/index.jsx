@@ -1,7 +1,7 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { MessageDisplay } from "@/components/common";
 import { ProductShowcaseGrid, UserShowcaseGrid } from "@/components/product";
-import PaymentForm from "@/components/payment/paymentForm";
+//import PaymentForm from "@/components/payment/paymentForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import family from "@/images/family.jpg";
