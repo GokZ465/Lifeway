@@ -2,7 +2,9 @@ import * as Route from "@/constants/routes";
 import logo from "@/images/logo2.png";
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { IconButton } from "@mui/material";
+import { IconButton } from "/node_modules/@mui/material"; // Absolute path to MUI IconButton
+
+// Add the new icons here with an absolute path
 import {
   Twitter,
   YouTube,
@@ -11,7 +13,7 @@ import {
   Pinterest,
   Reddit,
   Instagram,
-} from "@mui/icons-material"; // Add the new icons here
+} from "/node_modules/@mui/icons-material";
 import { FaBlogger } from "react-icons/fa"; // Import the Blogger icon from react-icons
 
 const Footer = () => {
