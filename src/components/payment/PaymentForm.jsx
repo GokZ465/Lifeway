@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CardElement, useStripe } from "@stripe/react-stripe-js";
-import stripeConfig from "../../services/stripeConfig";
+import stripeConfig from "@/services/stripeConfig";
 
 const PaymentForm = () => {
   const [amount, setAmount] = useState(0);

@@ -5,7 +5,7 @@ import PaymentForm from "@/components/payment/paymentForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import family from "@/images/family.jpg";
-import StripeConfig from "../../../src/services/stripeConfig";
+import StripeConfig from "@/services/stripeConfig";
 
 import {
   FEATURED_PRODUCTS,

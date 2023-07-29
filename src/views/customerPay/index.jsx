@@ -1,5 +1,5 @@
 import { loadStripe } from "@stripe/stripe-js";
-import StripeConfig from "../../services/stripeConfig";
+import StripeConfig from '@/services/stripeConfig';
 import PaymentForm from "@/components/payment/paymentForm";
 import { Elements } from "@stripe/react-stripe-js";
 
